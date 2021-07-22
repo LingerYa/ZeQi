@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linger的主页</title>
+
+    <link rel="stylesheet" href="styles/style1.css">
+<!-- 
+    <script src="scripts/script1.js"></script> -->
+
+</head>
+
+<body>
+    <!-- 左上信息栏 -->
+    <a href="index.html" class="myresume-wrapper">
+        <div class="myresume-img">
+            <img src="imgs/touxiang.jpg" height="60px" width="60px" alt="头像">
+        </div>
+        <div class="myresume-p">
+            <img src="imgs/resume2.png" height="58px"  alt="linger's resume">
+            <!-- <div class="myresume-linger">Linger</div>
+            <div class="myresume-resume">'s resume</div> -->
+        </div>
+    </a>
+    <!-- 左下导航栏 -->
+    <div class="navbar">
+        <input type="checkbox">
+        <ul>
+            <li class="nav">首页</li>
+            <li class="nav">关于我</li>
+            <li class="nav">技能</li>
+            <li class="nav">我的经历</li>
+            <li class="nav">我的作品</li>
+            <li class="nav">兴趣</li>
+            <li class="nav">联系我</li>
+        </ul> 
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- 页面！ -->
+    <main class="items">
+        <!-- 页面1 首页 -->
+        <div id="ym1" class="item ym-active">
+            <div class="ym1-mid">
+                <img src="imgs/hello2.png" height="90px" alt="hello!i'm linger">
+                <!-- <h1>hello!I'm Linger!</h1> -->
+                <strong>Go for what you want with love and enthusiasm.</strong>
+                <p class="ym1-p1">我叫Linger</p>
+                <p class="ym1-p2">一名前端爱好者</p>
+                <!-- <strong>Go for what you want with love and enthusiasm.</strong> -->
+                <p class="ym1-p3">@ JUL 2021</p>
+            </div>
+        </div>
+
+        <!-- 页面2 关于我 -->
+        <div id="ym2" class="item ym-next">
+            <!-- 个人介绍 居中 -->
+            <div class="ym2-intro">
+                <div class="ym2-intro-l1"></div>
+                <div class="ym2-intro-l2"></div>
+                <div class="ym2-w">
+                <img src="imgs/touxiang.jpg" height="200px" width="200px" alt="头像">
+                </div>
+                <div class="ym2-tx">
+                    <h2 class="ym2-h21">-幸会，我是Linger！</h2>
+                    <p>一名前端爱好者。前端即艺术~ 喜欢看些、整些花里胡哨的设计</p>
+                    <h2 class="ym2-h22">-关于我</h2>
+                    <p>坐标成都。现就读于电子科技大学软件工程专业</p>
+                    <p>一点点编程基础  写一点文档  
+                        测试优化些奇奇怪怪的东西  喜欢好看的事务  摄影  </p>
+                    <p>前端学习ing  但又对UI起了兴趣w</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面3 技能 -->
+        <div id="ym3" class="item">页面3</div>
+        <!-- 页面4 我的经历 -->
+        <div id="ym4" class="item">页面4</div>
+        <!-- 页面5 我的作品 -->
+        <div id="ym5" class="item">页面5</div>
+        <!-- 页面6 兴趣 -->
+        <div id="ym6" class="item">页面6</div>
+        <!-- 页面7 联系我 -->
+        <div id="ym7" class="item">页面7</div>
+    </main>
+    <!-- 那四个点 -->
+    <ul class="pointlist">
+        <li class="point point-active" data-index='0'></li>
+        <li class="point" data-index='1'></li>
+        <li class="point" data-index='2'></li>
+        <li class="point" data-index='3'></li>
+        <li class="point" data-index='4'></li>
+        <li class="point" data-index='5'></li>
+        <li class="point" data-index='6'></li>
+    </ul>
+    <script>
+        window.onload = function(){
+            //获取鼠标滚轮方向————
+            // 获取id为ym1的div
+            var ym1 = document.getElementById('ym1');
+            var ym2 = document.getElementById('ym2');
+            var ym3 = document.getElementById('ym3');
+            var ym4 = document.getElementById('ym4');
+            var ym5 = document.getElementById('ym5');
+            var ym6 = document.getElementById('ym6');
+            var ym7 = document.getElementById('ym7');
+            // 为ym1绑定一个鼠标滚轮的事件
+            ym1.onwheel = wheel;
+            ym2.onwheel = wheel;
+            ym3.onwheel = wheel;
+            ym4.onwheel = wheel;
+            ym5.onwheel = wheel;
+            ym6.onwheel = wheel;
+            ym7.onwheel = wheel;
+            // var items = document.getElementsByClassName('item');
+            // items.onwheel = wheel;
+            function wheel(event) {
+                event = event || window.event  //兼容处理。浏览器在IE/Opera中，用window.event写法；在Firefox里面,  用event写法。
+                if (event.wheelDelta > 0) {
+                    //alert("向上");
+                    goPre();
+                } else {
+                    //alert("向下");
+                    goNext();
+                }
+            }
+
+            //网页切换实现
+            var index = 0;//index表示第index个网页有active，在展示
+            var items = document.getElementsByClassName('item');//网页
+            var points = document.getElementsByClassName('point');//点
+            var navs = document.getElementsByClassName('nav');//导航
+            //先清除原有的active
+            var clearActive = function() {
+                for(var i=0;i<items.length;i++){
+                    items[i].className = 'item';
+                    points[i].className = 'point';
+                }
+            }
+            // 给index的图片 和点 加上active   展示函数
+            var goIndex = function () {
+                clearActive();
+                // if(index!=6)items[index+1].className = 'item ym-next';
+                // if(index!=0)items[index-1].className = 'item ym-pre';
+                items[index].className = 'item ym-active';
+                points[index].className = 'point point-active';
+            }
+            // 当滚轮向下时的程序  下一页
+            var goNext = function(){
+                if (index < 6 ) {
+                    index++;
+                } 
+                goIndex();
+            }
+            // 当滚轮向上时的程序 上一页
+            var goPre = function(){
+                if (index > 0) {
+                    index--;
+                } 
+                goIndex();
+            }
+            //点的直接切换
+            points[0].addEventListener('click',function () {
+                index=0;
+                goIndex();
+            })
+            points[1].addEventListener('click',function () {
+                index=1;
+                goIndex();
+            })
+            points[2].addEventListener('click',function () {
+                index=2;
+                goIndex();
+            })
+            points[3].addEventListener('click',function () {
+                index=3;
+                goIndex();
+            })
+            points[4].addEventListener('click',function () {
+                index=4;
+                goIndex();
+            })
+            points[5].addEventListener('click',function () {
+                index=5;
+                goIndex();
+            })
+            points[6].addEventListener('click',function () {
+                index=6;
+                goIndex();
+            })
+            //导航的切换==点
+            navs[0].addEventListener('click',function () {
+                index=0;
+                goIndex();
+            })
+            navs[1].addEventListener('click',function () {
+                index=1;
+                goIndex();
+            })
+            navs[2].addEventListener('click',function () {
+                index=2;
+                goIndex();
+            })
+            navs[3].addEventListener('click',function () {
+                index=3;
+                goIndex();
+            })
+            navs[4].addEventListener('click',function () {
+                index=4;
+                goIndex();
+            })
+            navs[5].addEventListener('click',function () {
+                index=5;
+                goIndex();
+            })
+            navs[6].addEventListener('click',function () {
+                index=6;
+                goIndex();
+            })
+
+        }
+            
+    </script> 
+
+</body>
+</html>

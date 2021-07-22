@@ -351,3 +351,95 @@ transition: all 1s;
 
 /* ————————————————————————ym1————————————————end———————— */
 
+/* ————————————————————————ym2———————————————start——————— */
+.ym2-intro{
+	position: absolute;
+	height: 470px;
+	width: 900px;
+	border-radius: 60px;
+	/* 居中 */
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	background: #e3dcb5;
+	box-shadow:  7px 7px 14px #726e5b,
+				-7px -7px 14px #ffffff;
+}
+.ym2-w img{
+	position: relative;
+	margin-top: 10px;
+	border-radius: 50%;
+	left: 50%;
+	transform: translate3d(-50%,0,0);
+	box-shadow:  7px 7px 14px #6e6b57,
+            	 -7px -7px 14px #ffffff;
+
+}
+.ym2-tx{
+	margin-top: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.ym2-tx h2{
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 5px;
+	margin-left: 10%;
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	font-family: "Comic Sans MS";
+	background: #cbdcdb;
+	box-shadow: inset 4px 4px 8px #a2b0af,
+				inset -4px -4px 8px #f4ffff;
+}
+.ym2-h21{
+	width: 220px;
+}
+.ym2-h22{
+	width: 110px;
+}
+.ym2-tx p{
+	margin-top: 8px;
+	margin-left: 10%;
+	letter-spacing: 2px;
+	font-size: 17px;
+	font-weight: 500;
+	font-family: "Comic Sans MS";
+}
+.ym2-intro-l1{
+	position: absolute;
+	margin-top: 25px;
+	right: 5%;
+	width: 20px;
+	height: 400px;
+	border-radius: 5px;
+	background: #cbdcdb;
+	box-shadow: inset 4px 4px 8px #a2b0af,
+				inset -4px -4px 8px #f4ffff;
+}
+.ym2-intro-l2{
+	position: absolute;
+	margin-top: 125px;
+	right: 10%;
+	width: 20px;
+	height: 300px;
+	border-radius: 5px;
+	background: #cbdcdb;
+	box-shadow: inset 4px 4px 8px #a2b0af,
+				inset -4px -4px 8px #f4ffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ————————————————————————ym2————————————————end———————— */
+
