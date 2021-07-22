@@ -1,0 +1,353 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ——————————————————————以上是清空浏览器默认样式——————↑———————————————————— */
+
+/* main{
+	position:fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	min-width: 1000px;
+	z-index:-10;
+	zoom: 1;
+	background: linear-gradient(to right top,#b1f5e8,#6cdbeb);
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-position: center 0;
+} */
+
+
+/* ——————————————————————————7张网页——————start————————————————————————— */
+
+.items{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+}
+#ym1{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:rgb(200, 230, 250);
+}
+#ym2{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#cbd2dc;
+}
+#ym3{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#cbdcdb;
+}
+#ym4{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#cfdccb;
+}
+#ym5{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#dcd3cb;
+}
+#ym6{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#dccbcb;
+}
+#ym7{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background:#d1cbdc;
+}
+.item{
+/* 透明度（未显示时） */
+opacity: 0;
+/* 透明度？转换时间 */
+transition: all 1s;
+}
+.ym-active{
+    opacity: 1;/*透明度 （这是显示的时候）*/
+    z-index: 10;
+}
+
+
+/* ——————————————————————————7张网页——————end————————————————————————— */
+
+
+
+/* ————————————————————————右边的小圆点样式——————start———————————— */
+.pointlist{
+    position: fixed;
+    right: 2.7%!important;
+	top: 50%;
+    width: 14px;
+	margin-top: 14px;
+	z-index: 100;
+	transform: translate3d(0,-50%,0);
+}
+.point{
+	display: block;
+    position: relative;
+    margin-bottom: 24px;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    opacity: 1;
+    background: #797979;
+	box-shadow:  7px 7px 14px #727272,
+            	 -7px -7px 14px #ffffff;
+	z-index: 100;
+    /* 加个 小手指   */
+    cursor: pointer;
+}
+.point:hover{
+	background: linear-gradient(145deg, #cccccc, #f3f3f3);
+}
+.point-active{
+	background: linear-gradient(145deg, #cccccc, #f3f3f3);
+	box-shadow:  5px 5px 10px #cccccc,
+	             -5px -5px 10px #fafafa;
+}
+
+.pointlist:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 6px;
+    border-right: 1px dashed #8c7576;
+    content: '';
+    height: 230px;/* 虚线长度 */
+    top: 6px;
+}
+/* ————————————————————————右边的小圆点样式——————end———————————— */
+
+/* ————————————————————————左上的信息栏resume——————start———————— */
+/* 盒子大小 定位 */
+.myresume-wrapper{
+	margin-top: 4vh;
+	margin-left: 3vh;
+	position: fixed;
+	height:70px ;
+	width: 300px;
+	z-index: 100;
+	border-radius: 14px;
+	background: #dccbcb;
+	box-shadow:  7px 7px 14px #6e6666,
+				-7px -7px 14px #ffffff;
+}
+.myresume-wrapper:hover{
+	background: linear-gradient(145deg, #cccccc, #f3f3f3);
+}
+.myresume-img{
+	margin-top: 6px;
+	margin-left: 20px;
+	height: 58px;
+	width: 58px;
+	border-radius: 29px;
+	overflow: hidden;
+	opacity: 1;
+}
+.myresume-p{
+	position:absolute;
+	top: 7px;
+	left: 85px;
+}
+
+
+/* ————————————————————————左上的信息栏resume——————end———————— */
+
+/* ————————————————————————左下的导航栏nav——————start———————— */
+.navbar{
+	position: fixed;
+	left: 4vw;
+	bottom: 4vh;
+	padding: 20px;
+	border-radius: 50px;
+	/* 用flex竖着倒过来解决按钮在上面的问题 将按钮固定在下面 上拉菜单 */
+	display: flex;
+	flex-direction: column-reverse;
+
+	background: #dbdccb;
+	box-shadow:  7px 7px 14px #6e6e66,
+            	 -7px -7px 14px #ffffff;
+	z-index: 101;
+}
+.navbar input{
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: #dbdccb;
+	/* 让框消失 */
+	opacity: 0;
+	    /* 加个 小手指   */
+		cursor: pointer;
+}
+/* 2根线 */
+.navbar span{
+	position: absolute;
+	left: 30px;
+	bottom: 37px;
+	width: 40px;
+	height: 5px;
+	border-radius: 15px;
+	background-color: #999;
+	/* 解决鼠标在线上点击时点不到按钮的问题 */
+	pointer-events: none;
+	transition: all 0.5s;
+}
+.navbar span:nth-child(4){
+	bottom: 54px;
+}
+
+.navbar ul{
+	height: 0px;
+	width: 60px;
+	overflow: hidden;
+	transition: all 0.5s;
+} 
+.nav{
+	height: 40px;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 40px;
+	text-align:center;
+	border-radius: 10px;
+	/* background-color: #fff; */
+	    /* 加个 小手指   */
+		cursor: pointer;
+}
+.nav:hover{
+	background: linear-gradient(145deg, #c5c6b7, #eaebd9);
+	box-shadow:  7px 7px 14px #d9dac9,
+				-7px -7px 14px #dddecd;
+}
+.navbar input:checked ~ ul{
+	height: 280px;
+}
+.navbar input:checked ~ span:nth-child(3){
+	bottom: 46px;
+	transform: rotate(-45deg);
+	background-color: rgb(253, 182, 182);
+
+}
+.navbar input:checked ~ span:nth-child(4){
+	bottom: 46px;
+	transform: rotate(45deg);
+	background-color: rgb(253, 182, 182);
+}
+
+/* ————————————————————————左下的导航栏nav——————end———————— */
+
+
+
+/* ————————————————————————ym1———————————————start——————— */
+/* 中间定位 */
+.ym1-mid{
+	position: absolute;
+	height: 300px;
+	width: 700px;
+	/* 居中 */
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	/* 拟态效果 */
+	border-radius: 60px;
+	/* 颜色选择 */
+	/* background: #c8e6fa;
+	box-shadow:  7px 7px 14px #8ca1af,
+				-7px -7px 14px #ffffff; */
+	/* background: #dccbcb;
+	box-shadow:  7px 7px 14px #6e6666,
+				-7px -7px 14px #ffffff; */
+	background: #d1cbdc;
+	box-shadow:  7px 7px 14px #69666e,
+				-7px -7px 14px #ffffff;
+	
+	/* flex容器，子容器自动生成容器 */
+	display:flex;
+	flex-direction:column; /*开了会横过来，该步使竖直 */
+	justify-content: center;
+	align-items: center;
+}
+.ym1-mid:hover{
+	/* background: linear-gradient(145deg, #b4cfe1, #d6f6ff); */
+	background: linear-gradient(145deg, #bcb7c6, #e0d9eb);
+}
+.ym1-mid h1{
+	font-size: 70px;
+}
+.ym1-mid p{
+	font-size: 20px;
+	margin: 8px;
+	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	letter-spacing: 2px;
+}
+.ym1-p3{
+	color: rgb(99, 15, 15);
+}
+.ym1-mid strong{
+	font-size: 25px;
+	font-weight: 800;
+	margin: 8px;
+	font-family: "微软雅黑";
+}
+
+
+
+
+
+/* ————————————————————————ym1————————————————end———————— */
+
