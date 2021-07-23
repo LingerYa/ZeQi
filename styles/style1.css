@@ -686,8 +686,170 @@ transition: all 1s;
 
 /* ————————————————————————ym3————————————————end———————— */
 
-
 /* ————————————————————————ym4———————————————start——————— */
+/* 定位大盒子 */
+.ym4-w{
+	width: 800px;
+    min-height: 430px;
+    padding-bottom: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -210px 0 0 -330px;
+
+	/* background-color: rgb(255, 250, 225,0.4); */
+
+	/* background: #b0e0e6; */
+	/* box-shadow:  10px 10px 20px #465a5c,
+				-10px -10px 20px #ffffff; */
+}
+
+/* 定位整个时间轴 包含圆q和下面的线x */
+.ym4-sjz{
+	position: absolute;
+	top: 0;
+	left: 100px;
+	width: 100px;
+}
+/* 球的样式 */
+.ym4-sjz-q{
+	position: absolute;
+	top: 0;
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+	
+	background: #b0e0e6;
+	box-shadow:  9px 9px 18px #222e33,
+				-9px -9px 18px #f5f5f5;
+}
+/* 里面的2排字 */
+.ym4-sjz-q h1{
+	font-size: 30px;
+	font-family: 'Comic Sans MS';
+	margin-top: 30px;
+	margin-left: 14px;
+	color: rgb(63, 6, 6);
+}
+.ym4-sjz-q p{
+	font-size: 15px;
+	font-family: 'Comic Sans MS';
+	margin-top: 5px;
+	margin-left: 30px;
+	color: rgb(110, 46, 46);
+}
+/* 下面的线x */
+.ym4-sjz-x{
+	/* content: ""; */
+	position: absolute;
+	left: 45px;
+	top: 100px;
+	height: 300px;
+	width: 10px;
+	border-radius: 5px;
+
+	background: #b0e0e6;
+	box-shadow: inset 1px 1px 2px #465a5c,
+				inset -1px -1px 2px #ffffff;
+}
+/* 时间轴上的点 */
+.ym4-sjz-point{
+	position: absolute;
+	left: 40px;
+	top: 160px;
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+
+	background: linear-gradient(145deg, #bcf0f6, #9ecacf);
+	box-shadow:  2px 2px 4px #465a5c,
+				 -2px -2px 4px #ffffff;
+}
+/* 左边文字我的经历 */
+.ym4-wdjl{
+	position: absolute;
+	top: 40px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #a1d2ff;
+	text-shadow:  2px 2px 4px #000000,
+				 -2px -2px 4px #dbffff;
+}
+/* 左边文字 年月 */
+.ym4-ny{
+	position: absolute;
+	top: 159px;
+	left: 30px;
+	font-size:15px;
+	font-weight: 900;
+	letter-spacing: 2px;
+	word-spacing: 4px;
+	color: #a1d2ff;
+	text-shadow:  2px 2px 4px #000000,
+				 -2px -2px 4px #dbffff;
+}
+.ym4-ny span{
+	font-size:20px;
+}
+/* 右边的文字 大框定位 */
+.ym4-text-w{
+	position: absolute;
+	top: 50px;
+	left: 250px;
+	width: 550px;
+	height: 350px;
+	color: #5f4846;
+	font-family: 'Comic Sans MS';
+	/* background: #b0e0e6;看位置 */
+}
+.ym4-text-w h1{
+	font-size: 24px;
+	font-weight: 600;
+}
+.ym4-text-w h2{
+	font-size: 16px;
+	margin-top: 15px;
+	color: rgb(150, 85, 0);
+}
+.ym4-text-w p{
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	color: rgb(124, 68, 4);
+
+}
+.ym4-text-w span{
+	font-size: 24px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	margin-left: 10px;
+	padding: 20px;
+	height: 30px;
+	width: 210px;
+	/* border-radius: 50%; */
+	color: #6c91c0;
+	background: #fecdc9;
+	box-shadow:  2px 2px 4px #665250,
+				-2px -2px 4px #ffffff;
+	/* background: #b0e0e6;
+	box-shadow: inset 1px 1px 2px #465a5c,
+				inset -1px -1px 2px #ffffff; */
+}
+.ym4-text-w span:hover{
+	box-shadow: inset 2px 2px 4px #665250,
+				inset -2px -2px 4px #ffffff;
+}
+.ym4-text-tbc{
+	position: absolute;
+	top: 230px;
+	width: 400px;
+	white-space:nowrap; 
+}
+
+
+
+
 /* ————————————————————————ym4————————————————end———————— */
 
 /* ————————————————————————ym5———————————————start——————— */
