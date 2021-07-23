@@ -124,17 +124,17 @@ transition: all 1s;
 
 /* ——————————————————————————7张网页——————end————————————————————————— */
 
-
-
 /* ————————————————————————右边的小圆点样式——————start———————————— */
 .pointlist{
     position: fixed;
     right: 2.7%!important;
+	/* 居中 */
 	top: 50%;
+	transform: translate3d(0,-50%,0);
+
     width: 14px;
 	margin-top: 14px;
 	z-index: 100;
-	transform: translate3d(0,-50%,0);
 }
 .point{
 	display: block;
@@ -151,25 +151,30 @@ transition: all 1s;
     /* 加个 小手指   */
     cursor: pointer;
 }
+/* hover凹下去 */
 .point:hover{
 	background: linear-gradient(145deg, #cccccc, #f3f3f3);
 }
+/* active按下去 */
 .point-active{
 	background: linear-gradient(145deg, #cccccc, #f3f3f3);
 	box-shadow:  5px 5px 10px #cccccc,
 	             -5px -5px 10px #fafafa;
 }
-
+/* 来根虚线 */
 .pointlist:after {
     position: absolute;
+    top: 6px;
     display: block;
     left: 0;
     width: 6px;
-    border-right: 1px dashed #8c7576;
+	/* 右边框 1px 虚线 颜色 */
+    border-right: 1px dashed #8c7576; 
+	/* 给个content才能显示出来边框 */
     content: '';
     height: 230px;/* 虚线长度 */
-    top: 6px;
 }
+
 /* ————————————————————————右边的小圆点样式——————end———————————— */
 
 /* ————————————————————————左上的信息栏resume——————start———————— */
@@ -186,6 +191,7 @@ transition: all 1s;
 	box-shadow:  7px 7px 14px #6e6666,
 				-7px -7px 14px #ffffff;
 }
+/* hover凹下去 */
 .myresume-wrapper:hover{
 	background: linear-gradient(145deg, #cccccc, #f3f3f3);
 }
@@ -194,8 +200,10 @@ transition: all 1s;
 	margin-left: 20px;
 	height: 58px;
 	width: 58px;
+    /* 变成圆的头像 */
 	border-radius: 29px;
 	overflow: hidden;
+	
 	opacity: 1;
 }
 .myresume-p{
@@ -203,7 +211,20 @@ transition: all 1s;
 	top: 7px;
 	left: 85px;
 }
+/* linger's resume的样式 */
+.myresume-linger{
+	margin-top: 13px;
+	font-family: "Comic Sans MS";
+	font-size: 27px;
+	font-weight: 600;
+	/* 不换行 */
+	white-space:nowrap;
 
+	color: #9077d4;
+	text-shadow:  1.5px 1.5px 3px #483c6a,
+				 -1.5px -1.5px 3px #d8b3ff;
+
+}
 
 /* ————————————————————————左上的信息栏resume——————end———————— */
 
@@ -223,6 +244,7 @@ transition: all 1s;
             	 -7px -7px 14px #ffffff;
 	z-index: 101;
 }
+/* 定位按钮在左下角 */
 .navbar input{
 	width: 50px;
 	height: 50px;
@@ -251,37 +273,41 @@ transition: all 1s;
 .navbar span:nth-child(4){
 	bottom: 54px;
 }
-
+/* 没点的时候ul菜单隐藏 */
 .navbar ul{
 	height: 0px;
 	width: 60px;
 	overflow: hidden;
 	transition: all 0.5s;
 } 
+/* 每个导航按钮的样式 */
 .nav{
 	height: 40px;
 	font-size: 15px;
 	font-weight: 700;
+	border-radius: 10px;
+	/* 居中 */
 	line-height: 40px;
 	text-align:center;
-	border-radius: 10px;
-	/* background-color: #fff; */
+	/* background-color: #fff; 用来看看位置 */
 	    /* 加个 小手指   */
 		cursor: pointer;
 }
+/* hover凹下去 */
 .nav:hover{
 	background: linear-gradient(145deg, #c5c6b7, #eaebd9);
 	box-shadow:  7px 7px 14px #d9dac9,
 				-7px -7px 14px #dddecd;
 }
+/* 点了之后ul从height从0到280px */
 .navbar input:checked ~ ul{
 	height: 280px;
 }
+/* 这里之前横着的2跟线旋转交叉变成 ×  */
 .navbar input:checked ~ span:nth-child(3){
 	bottom: 46px;
 	transform: rotate(-45deg);
 	background-color: rgb(253, 182, 182);
-
 }
 .navbar input:checked ~ span:nth-child(4){
 	bottom: 46px;
@@ -345,28 +371,26 @@ transition: all 1s;
 	font-family: "微软雅黑";
 }
 
-
-
-
-
 /* ————————————————————————ym1————————————————end———————— */
 
 /* ————————————————————————ym2———————————————start——————— */
+/* 中间的大框定位 */
 .ym2-intro{
 	position: absolute;
 	height: 470px;
 	width: 900px;
 	border-radius: 60px;
-	/* 居中 */
+	/* 居中 偏右下一点点*/
 	left: 50%;
 	top: 50%;
-	transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-45%,-45%,0);
 	background: #e3dcb5;
 	box-shadow:  7px 7px 14px #726e5b,
 				-7px -7px 14px #ffffff;
 }
+/* 圆 头像 */
 .ym2-w img{
-	position: relative;
+	position: relative; /* 不用ab 会塌陷因为下面的tx没给定位 */
 	margin-top: 10px;
 	border-radius: 50%;
 	left: 50%;
@@ -375,6 +399,7 @@ transition: all 1s;
             	 -7px -7px 14px #ffffff;
 
 }
+/* 下面的介绍tx 用弹性布局 */
 .ym2-tx{
 	margin-top: 10px;
 	display:flex;
@@ -394,12 +419,6 @@ transition: all 1s;
 	box-shadow: inset 4px 4px 8px #a2b0af,
 				inset -4px -4px 8px #f4ffff;
 }
-.ym2-h21{
-	width: 220px;
-}
-.ym2-h22{
-	width: 110px;
-}
 .ym2-tx p{
 	margin-top: 8px;
 	margin-left: 10%;
@@ -407,6 +426,13 @@ transition: all 1s;
 	font-size: 17px;
 	font-weight: 500;
 	font-family: "Comic Sans MS";
+}
+/* 凹下去的2个 */
+.ym2-h21{
+	width: 220px;
+}
+.ym2-h22{
+	width: 110px;
 }
 .ym2-intro-l1{
 	position: absolute;
@@ -431,15 +457,244 @@ transition: all 1s;
 				inset -4px -4px 8px #f4ffff;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ————————————————————————ym2————————————————end———————— */
 
+/* ————————————————————————ym3———————————————start——————— */
+/* 整体定位到中偏一点点右 */
+.ym3-w{
+	width: 650px;
+	height: 420px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-45%,-50%,0);
+}
+/* SKILLS块 */
+.ym3-h1{
+	width: 100px;
+	height: 400px;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #bdc4e5;
+	box-shadow:  10px 10px 20px #5f6273,
+				 -10px -10px 20px #ffffff;
+}
+.ym3-h1:hover{
+	background: linear-gradient(145deg, #aab0ce, #cad2f5);
+}
+.ym3-h1 h1{
+	margin-top: 30px;
+	font-size: 55px;
+	font-family:"Comic Sans MS" ;
+	/* 字体颜色可改进一下emmm */
+	color: rgb(231, 114, 114);
+	text-shadow: 3px 3px 6px #5c4141,
+				-3px -3px 6px #e9caca;
+}
+/* 技能条块 */
+.ym3-sk-w{
+	width: 500px;
+	height: 300px;
+	border-radius: 40px;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	background: #b7bed7;
+	box-shadow:  10px 10px 20px #5c5f6c,
+				-10px -10px 20px #ffffff;
+}
+.ym3-sk{
+	font-size: 30px;
+	font-family:"Comic Sans MS" ;
+	font-weight: 600;
+	margin-top: 33px;
+	margin-left: 30px;
+	color:#c8e6fa;
+	text-shadow:  2px 2px 4px #64737d,
+				 -2px -2px 4px #ffffff;
+}
+.ym3-sk-jntd,.ym3-sk-jnt{
+	position: absolute;
+	left: 300px;
+	top: 0;
+}
+.ym3-sk-jnt{
+	margin-top: -5px;
+}
+.ym3-sk-jntd ul{
+	width: 300px;
+}
+.ym3-sk-jntd li{
+	width: 300px;
+	border-radius: 15px;
+	margin-top: 33px;
+	height: 30px;
+	background: #c8e6fa;
+	box-shadow: inset 3px 3px 6px #a0b8c8,
+				inset -3px -3px 6px #f0ffff;
+	/* background: #b7bed7;
+	box-shadow: inset 3px 3px 6px #9298ac,
+				inset -3px -3px 6px #dce4ff; */
+}
+/* 技能进度 */
+.ym3-sk-jnt li{
+	content: "";
+	display: block;
+	border-radius: 10px;
+	margin-left: 7px;
+	margin-top: 43px;
+	height: 20px;
+	/* 颜色 */
+	/* background: #c8e6fa;
+	box-shadow:  1px 1px 2px #a0b8c8,
+				-1px -1px 2px #f0ffff; */
+	
+	/* background: #b7bed7;
+	box-shadow:  2px 2px 4px #9298ac,
+					-2px -2px 4px #dce4ff; */
+	
+	background: #d7adad;
+	box-shadow:  2px 2px 4px #ac8a8a,
+					-2px -2px 4px #ffd0d0;
+}
+.ym3-sk-jnt li:hover{
+	/* background: linear-gradient(145deg, #c4cbe6, #a5abc2); */
+	background: linear-gradient(145deg, #e6b9b9, #c29c9c);
+}
+
+/* 加载技能条动画 */
+.ym3-sk-jnt-show>.html{
+	animation-name: html;
+}
+.ym3-sk-jnt-show>.c{
+	animation-name: c;
+}
+.ym3-sk-jnt-show>.css{
+	animation-name: css;
+}
+.ym3-sk-jnt-show>.js{
+	animation-name: js;
+}
+.ym3-sk-jnt-show li{
+	animation-duration: 1.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-delay:1s;
+}
+@keyframes html {
+	from {
+		width: 0;
+	  }
+	  to {
+		width: 3600%;
+	  }
+}
+@keyframes c {
+	from {
+		width: 0;
+	  }
+	  to {
+		width: 3000%;
+	  }
+}
+@keyframes css {
+	from {
+		width: 0;
+	  }
+	  to {
+		width: 2300%;
+	  }
+}
+@keyframes js {
+	from {
+		width: 0;
+	  }
+	  to {
+		width: 1000%;
+	  }
+}
+
+/* 下面的3个小块 都有hover凹下去*/
+.ym3-sk-qt1{
+	width: 133px;
+	height: 70px;
+	border-radius: 60px;
+	position: absolute;
+	margin-top: 330px;
+	left: 150px;
+
+	background: #dcd3cb;
+	box-shadow:  10px 10px 20px #6e6a66,
+				-10px -10px 20px #ffffff;
+	
+	/* 字体与居中 */
+	font-family: 'Comic Sans MS';
+	font-size: 20px;
+	line-height: 70px;
+	text-align:center;
+
+}
+.ym3-sk-qt1:hover{
+	background: linear-gradient(145deg, #c6beb7, #ebe2d9);
+}
+.ym3-sk-qt2{
+	width: 120px;
+	height: 70px;
+	border-radius: 60px;
+	position: absolute;
+	margin-top: 330px;
+	left: 347px;
+
+	background: #dccbd4;
+	box-shadow:  10px 10px 20px #6e666a,
+				 -10px -10px 20px #ffffff;
+	/* 字体与居中 */
+	font-family: 'Comic Sans MS';
+	font-size: 20px;
+	line-height: 70px;
+	text-align:center;
+
+}
+.ym3-sk-qt2:hover{
+	background: linear-gradient(145deg, #c6b7bf, #ebd9e3);
+}
+.ym3-sk-qt3{
+	width: 120px;
+	height: 70px;
+	border-radius: 60px;
+	position: absolute;
+	margin-top: 330px;
+	left: 530px;
+
+	background: #d5dccb;
+	box-shadow:  10px 10px 20px #6b6e66,
+				 -10px -10px 20px #ffffff;
+
+	/* 字体与居中 */
+	font-family: 'Comic Sans MS';
+	font-size: 20px;
+	line-height: 70px;
+	text-align:center;
+
+}
+.ym3-sk-qt3:hover{
+	background: linear-gradient(145deg, #c0c6b7, #e4ebd9);
+}
+
+
+/* ————————————————————————ym3————————————————end———————— */
+
+
+/* ————————————————————————ym4———————————————start——————— */
+/* ————————————————————————ym4————————————————end———————— */
+
+/* ————————————————————————ym5———————————————start——————— */
+/* ————————————————————————ym5————————————————end———————— */
+
+/* ————————————————————————ym6———————————————start——————— */
+/* ————————————————————————ym6————————————————end———————— */
+
+/* ————————————————————————ym7———————————————start——————— */
+/* ————————————————————————ym7————————————————end———————— */

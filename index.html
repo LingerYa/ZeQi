@@ -19,9 +19,9 @@
             <img src="imgs/touxiang.jpg" height="60px" width="60px" alt="头像">
         </div>
         <div class="myresume-p">
-            <img src="imgs/resume2.png" height="58px"  alt="linger's resume">
-            <!-- <div class="myresume-linger">Linger</div>
-            <div class="myresume-resume">'s resume</div> -->
+            <!-- 减少图片使用 加载太慢了 -->
+            <!-- <img src="imgs/resume2.png" height="58px"  alt="linger's resume"> -->
+            <div class="myresume-linger">Linger's resume</div>
         </div>
     </a>
     <!-- 左下导航栏 -->
@@ -77,7 +77,46 @@
         </div>
 
         <!-- 页面3 技能 -->
-        <div id="ym3" class="item">页面3</div>
+        <div id="ym3" class="item">
+            <!-- 大盒子 -->
+            <div class="ym3-w">
+                <!-- 左边的标题 -->
+                <div class="ym3-h1">
+                    <h1>&nbsp;S<br>
+                        &nbsp;&nbsp;&nbsp;K<br>
+                        &nbsp;&nbsp;I<br>
+                        &nbsp;L<br>
+                        &nbsp;&nbsp;&nbsp;L<br>
+                        &nbsp;S</h1>
+                </div>
+                <!-- 技能框 右上 -->
+                <div class="ym3-sk-jnk">
+                    <ul class="ym3-sk-w">
+                        <li class="ym3-sk">HTML</li>
+                        <li class="ym3-sk">C</li>
+                        <li class="ym3-sk">CSS</li>
+                        <li class="ym3-sk">JS</li>
+                    </ul>
+                    <ul class="ym3-sk-jntd">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                    </ul>
+                    <ul class="ym3-sk-jnt">
+                        <li class="html"></li>
+                        <li class="c"></li>
+                        <li class="css"></li>
+                        <li class="js"></li>
+                    </ul>
+                </div>
+                <!-- 右下的3个小框 -->
+                <div class="ym3-sk-qt1">Photography</div>
+                <div class="ym3-sk-qt2">procreate</div>
+                <div class="ym3-sk-qt3">design</div>
+            </div>
+        </div>
+
         <!-- 页面4 我的经历 -->
         <div id="ym4" class="item">页面4</div>
         <!-- 页面5 我的作品 -->
@@ -134,6 +173,9 @@
             var items = document.getElementsByClassName('item');//网页
             var points = document.getElementsByClassName('point');//点
             var navs = document.getElementsByClassName('nav');//导航
+
+            var ym3show = document.getElementsByClassName('ym3-sk-jnt')//第3页动画
+
             //先清除原有的active
             var clearActive = function() {
                 for(var i=0;i<items.length;i++){
@@ -146,8 +188,10 @@
                 clearActive();
                 // if(index!=6)items[index+1].className = 'item ym-next';
                 // if(index!=0)items[index-1].className = 'item ym-pre';
+                if (index == 2){ym3show[0].className = 'ym3-sk-jnt ym3-sk-jnt-show';}
                 items[index].className = 'item ym-active';
                 points[index].className = 'point point-active';
+            
             }
             // 当滚轮向下时的程序  下一页
             var goNext = function(){
